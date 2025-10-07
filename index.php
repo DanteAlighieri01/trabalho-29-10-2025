@@ -8,7 +8,7 @@
     </head>
     <style>
     .verde {
-        background-color:#696969;
+        background-color:#808080	;
         color: white
         
     }
@@ -19,13 +19,13 @@
     </style>
     <body>
     <div class="verde row justify-content row-cols-1 row-cols-md-3 mb-3 text">
-        <img src="https://mail-attachment.googleusercontent.com/attachment/u/0/?ui=2&ik=8044bc6ddb&attid=0.1&permmsgid=msg-f:1845263873557491827&th=199bb1b764417073&view=att&disp=inline&realattid=f_mgfk0l420&zw&saddbat=ANGjdJ8lYUuvnG9tO0Z4PwWM4W0uQNF-ccrVxE2CHrhNdjcD58lCpmEAFA9TLslaVOwQpepKNR7OyM0-2r_CKvbi7Wmvs0cZXuU4IWjcoj0ZwpCsBm_ro8nh0O3wwA1McvMnko3KwGEcBbtgXMp3x7tjbwEkivZ47O6MaCy1LQiumIbw2HSqbdPUY6ukJwtVqp5GK75kE3bhFRdTqfTGmG5uGsc2uJMryT2W1g7TucAEZXIkzWyEpMsHKFUMH6AHUa21iIHcPnYKnGUdL2cKBta4DOaYehx48b49o8rS6MD86u9ivmt_zR6MtBXwJkJEWWh6K-tkICB0QcwTV-isfikdq4tkcjHBGMUR0PDjwoJNCZ01lkzLz8Ia7ndJcHM7Iefts_rwaRclAibtDnLURaLOwc21jquburQycPY-t-cF5g0ExQG4nsQR47j9frSpKye6FJ05u5CTox86b_KlKHxv6iVS4CRay8fFmz7B3RXPy8zxrgv8g-wAogxT3vDo4SGtJv5DG-q1PXSbBoMkXCH8iJ1Lvr4uXxGdfJtdJOSlXptwn2Qzo5V4KDjra8-MdMK4Tt29AolblsJb_uZCRHFVVo_5d-xcnwQYhtDA5hwnh32wT6SVM-35shPYNDG2-7ijYrhxVuGVRpz1oSTK5bXK-ylE9UR-4bS85-z9ClxSsWDmOQkFpZi094a75keBEs8uc3nWH1VzVv0DQaIWEJCvKIIGLu5I9731h-6WCrpsDKlVcjYD9ynR8qTWBDcASpbD8CSfcc-TNBK3MkUBMz74EH4JVmOWFlaNrMFToacocZ5cWDw6cWvp6_GdCgjRMJogVp7hUnuRO3QD3wQLdgaFXNWSFLnvirEhu7SRY45IAr6Rz9P2UkooMFoDzoFWzwZzcBWyTt599CewmxLF4GQZI7MsCJDbAebwGIrgj_GZ9dgWJf8_XQ4g3kwSGYW9vKE6oukwtpR10aaIhWXifkvmWFH7KgTdGpijGYhzXTRi-zHUaafPe7IXgkTPC0Uzg3WNGtnSAuzhXxfBEf30T79ZoG3KY1_w3ZohBru5MA" style = " margin-left: 20px; width:150px; height:50px"/>
+        <img src="imagens\link_gov.png" style = "maring-lift: 10px;width: 150px; height: 50px"/>
     </div>    
     <div class="bandeira style=text-align: center;">
     <h2>
         CONECTA JOVEM
     </h2>
-    <img src="https://mail.google.com/mail/u/0/?ui=2&ik=8044bc6ddb&attid=0.1&permmsgid=msg-f:1845260140354816416&th=199bae52300949a0&view=fimg&disp=thd&attbid=ANGjdJ_uaCr9ULhdhmEfnhFthM9opeDqqwTwi5shEawtxwSWR9rYPKkUjGjaE0mNHZ1R7yNB7nBxhYpr07IVuS36MDDZrtBHnt70bUw8hvaydOU9XHRtVGF5ScttujE&ats=2524608000000&sz=w1920-h953" alt="" style = "position relative;bottom: 30px; marin-bottom: 60px;float: center; width:150px; height:150px"/>   
+    <img src="imagens\selo_mga.png" style = "position relative;bottom: 30px;marin-bottom: 60px;width: 150px; height: 150px;float: center"/>   
     </div>
         <br>
         <br>
