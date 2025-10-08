@@ -9,7 +9,7 @@
     <style>
     h2 { font-family: Arial Black, sans-serif; margin-left: 20px;}   
     .two {
-        background-color:#808080	;
+        background-color:#4682B4;
         color: white }
     .bandeira{
         text-align: center;
@@ -17,31 +17,40 @@
     }
     .menu {
         background-color:#00BFFF;
+        color: white;
+        justify-content: flex start;
+    }
+    .menu2 {
         
     }
     </style> 
     <body>
-    <div class="one row justify-content row-cols-1 row-cols-md-1 mb-2 ">
+    <div class="one row justify-content row-cols-1 row-cols-md-1 mb-1">
         <div class="two row justify-content">
-            <img src="imagens\link_gov.png" style = "maring-lift: 20px;width: 150px; height: 50px"/>
+            <img src="imagens\link_gov.png" style = "margin-lift: 20px;width: 150px; height: 50px"/>
+            <div class="menu2 row justify-content row-cols-1 row-cols-md-6 mb-2">
+            <?php
+            include 'menu2.php';
+            ?>
+            </div>
         </div>  
         <br>  
-        <div class="bandeira style=text-align: center;">
-        <img src="imagens\secretaria_juventude.jpg" style = "position relative;bottom: 30px;width: 750px; height: 150px;float: center"/>   
+        <div class="bandeira row justify-content-center row-cols--md-3;">
+        <img src="imagens\secretaria_juventude.jpg" style = "position relative;bottom: 30px;width: 820px; height: 170px;float: center"/>   
         </div>
         <br>
-        <div class="menu row justify-content t">
+        <div class="menu d-flex justify-content-start align-items-center p-2">
             <?php 
             include 'menu1.php';
             ?>
         </div>    
     </div>
         <br>
-        <div class="02 row justify-content-center row-cols-1 row-cols-md-3 mb-3 text-center">
+        <div class="thre row justify-content-center row-cols-2 row-cols-md-3 mb-3 text-center">
             <div class="col">
                 ...codigo
             </div>
         </div>
-    <body>
+    </body>
 </html>
 </html>
