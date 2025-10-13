@@ -27,18 +27,14 @@
     <body>
     <div class="one row justify-content row-cols-1 row-cols-md-1 mb-1">
         <div class="two row justify-content">
-            <img src="imagens\link_gov.png" style = "margin-lift: 20px;width: 150px; height: 50px"/>
+        <img src="imagens\link_gov.png" style = "margin: 20px;width: 190px; height: 50px"/>
+        <img src="imagens\secretaria_juventude.jpg" style = "margin-right: 20px;margin-bottom: 0px;margin-left: 300px;margin-top: 0px;width: 880px; height: 200px"/>   
             <div class="menu2 row justify-content row-cols-1 row-cols-md-6 mb-2">
             <?php
             include 'menu2.php';
             ?>
-            </div>
-        </div>  
-        <br>  
-        <div class="bandeira row justify-content-center row-cols--md-3;">
-        <img src="imagens\secretaria_juventude.jpg" style = "position relative;bottom: 30px;width: 820px; height: 170px;float: center"/>   
+            </div>  
         </div>
-        <br>
         <div class="menu d-flex justify-content-start align-items-center p-2">
             <?php 
             include 'menu1.php';

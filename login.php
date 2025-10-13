@@ -1,13 +1,13 @@
 <?php
     session_start();
     include 'conecta.php';
-    $nome = $_POST['nome'];
+    $login = $_POST['login'];
     $senha = $_POST['senha'];
-    $logar = mysqli_query($conn, "SELECT * FROM usuarios WHERE nome='$nome' AND senha='$senha'");
+    $logar = mysqli_query($conn, "SELECT * FROM login WHERE login='$login' AND senha='$senha'");
     if (mysqli_num_rows($logar) > 0) {
         $dados = mysqli_fetch_assoc($logar);
-        $_SESSION["user"] = $dados['nome'];
-        echo ("<script>window.location.replace('inicio.php');</script>");
+        $_SESSION["user"] = $dados['login'];
+        echo ("<script>window.location.replace('dashbord.php');</script>");
     }
     else {
         echo ("<script>alert('Login ou senha inválido! Tente novamente!');</script>");

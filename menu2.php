@@ -15,7 +15,7 @@ if (session_status() === PHP_SESSION_NONE) {
         <div class="position-absolute top-0 end-0 p-3">
             <a href="cadastro.php" style="color:white; text-decoration:none; font-weight:bold;">CADASTRO</a>
             <b><span style="color:gray;">|</span></b>
-            <a href="login.php" style="color:white; text-decoration:none; font-weight:bold;">LOGIN</a>
+            <a href="index.php" style="color:white; text-decoration:none; font-weight:bold;">LOGIN</a>
         </div>
     </body>
 </html>

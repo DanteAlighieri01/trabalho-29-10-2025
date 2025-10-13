@@ -19,13 +19,13 @@
     </style>
     <body>
     <div class="verde row justify-content row-cols-1 row-cols-md-3 mb-3 text">
-        <img src="imagens\link_gov.png" style = "maring-lift: 20px;margin:10px;width: 190px; height: 50px"/>
-    </div>    
+        <img src="imagens\link_gov.png" style = "margin: 20px;width: 190px; height: 50px"/>
+        <img src="imagens\brasao_mga.png" style = "margin-right: 20px;margin-bottom: 10px;margin-left: 1560px;margin-top: 10px;width: 100px; height: 80px"/>   
+    </div>   
     <div class="bandeira style=text-align: center;">
     <h2>
         CONECTA JOVEM
     </h2>
-    <img src="imagens\brasao_mga.png" style = "position relative;bottom: 30px;marin-bottom: 60px;width: 150px; height: 150px;float: center"/>   
     </div>
         <br>
         <br>
