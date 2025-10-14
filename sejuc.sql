@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 13/10/2025 às 22:06
+-- Tempo de geração: 14/10/2025 às 22:14
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -55,10 +55,19 @@ CREATE TABLE `cadastro` (
   `celular` varchar(16) NOT NULL,
   `cep` varchar(9) NOT NULL,
   `cpf` varchar(15) NOT NULL,
-  `ocupação` varchar(999) NOT NULL,
+  `login` varchar(999) NOT NULL,
+  `senha` varchar(200) NOT NULL,
+  `ocupacao` varchar(999) NOT NULL,
   `interesse` varchar(999) NOT NULL,
   `conheceu_sejuc` varchar(999) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `cadastro`
+--
+
+INSERT INTO `cadastro` (`id`, `nome`, `idade`, `genero`, `mail`, `celular`, `cep`, `cpf`, `login`, `senha`, `ocupacao`, `interesse`, `conheceu_sejuc`) VALUES
+(3, 'dante', '15', 'masculino', 'teste@gmail.com', '888787878', '87083420', '999999', 'teste', 'teste', 'estudando', 'profissionalizantes', '');
 
 -- --------------------------------------------------------
 
@@ -154,7 +163,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT de tabela `cadastro`
 --
 ALTER TABLE `cadastro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `login`
