@@ -46,7 +46,9 @@
                             <label class="form-label"><b>SENHA</b></label>
                             <input class="form-control" type="password" name="senha" required/>
                             <br>
-                            <input type="submit" class="btn btn-outline-success" value="LOGIN">
+                            <div class="text-center mt-3">
+                            <button type="submit">CADASTRAR</button>
+                            </div>
                         </form>
                     </div>
                 </div>       
