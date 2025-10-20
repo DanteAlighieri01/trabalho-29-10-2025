@@ -8,14 +8,47 @@
     </head>
     <style>
     .verde {
-        background-color:#4682B4;
-        color: white
-        
+      background-color: #4682B4;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .bandeira {
-        text-align: center
+
+    .verde img {
+      height: 60px;
+      object-fit: contain;
     }
-    h2 { font-family: Arial Black, sans-serif; margin-left: 20px;}    
+
+    .card {
+      max-width: 600px;
+      margin: 30px auto;
+      border-radius: 12px;
+    }
+
+    form {
+      padding: 20px 30px;
+    }
+
+    .form-label {
+      font-weight: 600;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+    h2 { font-family: Arial Black, sans-serif; text-align: center;}    
     </style>
     <body>
     <div class="verde row justify-content row-cols-1 row-cols-md-3 mb-3 text">
@@ -46,8 +79,9 @@
                             <label class="form-label"><b>SENHA</b></label>
                             <input class="form-control" type="password" name="senha" required/>
                             <br>
-                            <div class="text-center mt-3">
-                            <button type="submit">CADASTRAR</button>
+                            <br>
+                            <div>
+                            <button type="submit">ENVIAR</button>
                             </div>
                         </form>
                     </div>

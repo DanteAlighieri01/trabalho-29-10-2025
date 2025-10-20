@@ -1,29 +1,26 @@
 <?php
+session_start();
 include 'conecta.php';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Captura dos dados do formulário
-    $nome     = $_POST['nome'] ?? '';
-    $idade    = $_POST['idade'] ?? '';
-    $genero   = $_POST['genero'] ?? '';
-    $mail    = $_POST['mail'] ?? '';
-    $celular = $_POST['celular'] ?? '';
-    $cep      = $_POST['cep'] ?? '';
-    $cpf      = $_POST['cpf'] ?? '';
-    $login    = $_POST['login'] ?? '';
-    $senha    = $_POST['senha'] ?? '';
-    $situacao = $_POST['situacao'] ?? '';
+    $cursos = $_POST['cursos'] ?? '';
     $interesse = $_POST['interesse'] ?? '';
-    $conheceu_sejuc = $_POST['conheceu_sejuc'] ?? '';
-
+    $horarios = $_POST['horarios'] ?? '';
+    $esportes = $_POST['esportes'] ?? '';
+    $espaco = $_POST['espaco_esportivo'] ?? '';
+    $conteudo = $_POST['conteudo'] ?? '';
+    $musica = $_POST['musica'] ?? '';
+    $conhece = $_POST['conhece'] ?? '';
+    $informar = $_POST['informar'] ?? '';
     // Verifica se o nome e o CPF foram preenchidos
-    if (empty($nome) || empty($cpf)) {
+    if (empty($cursos) || empty($informar) || empty($interesse) || empty($horarios) || empty($esportes) || empty($conteudo) || empty($musica) || empty($conhece)) {
         echo "<script>alert('Preencha todos os campos obrigatórios!'); history.back();</script>";
         exit();
     }
 
     // Verifica se já existe registro
-    $check = $conn->prepare("SELECT * FROM cadastro WHERE nome = ? AND cpf = ?");
-    $check->bind_param("ss", $nome, $cpf);
+    $check = $conn->prepare("SELECT * FROM questionario_cadastro WHERE id_cadastro = ? AND id_questionario = ?");
+    $check->bind_param("ss", $id_cadastro, $id_questionario);
     $check->execute();
     $result = $check->get_result();
 
@@ -37,21 +34,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Insere novo registro
     $sql = $conn->prepare("INSERT INTO cadastro 
-        (nome, idade, genero, mail, celular, cep, cpf, login, senha, ocupacao, interesse, conheceu_sejuc)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-
-    $sql->bind_param("sissssssssss", 
-        $nome, $idade, $genero, $mail, $celular, $cep, $cpf, $login, $senha, $situacao, $interesse, $conheceu_sejuc
+        (cursos,interesse,horarios,esportes,espaco_esportivo,conteudo,musica,conhece,informar)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?,?)");
+       
+    $sql->bind_param("sssssssss", 
+    $cursos,$interesse,$horarios,$esportes,$espaco_esportivo,$conteudo,$musica,$conhece,$informar
     );
 
     if ($sql->execute()) {
         echo "<script>
-            alert('Cadastro realizado com sucesso!');
-            window.location.href='questionario.php';
+            alert('Questionario realizado com sucesso!');
+            window.location.href='web_sejuc.php';
         </script>";
     } else {
         echo "<script>
-            alert('Não foi possível cadastrar o jovem!');
+            alert('Não foi possível realizar o questionario!');
             window.location.href='web_sejuc.php';
         </script>";
     }
@@ -59,6 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->close();
 } else {
     // Se o arquivo for acessado diretamente sem POST
-    echo "<script>alert('Acesso inválido. Por favor, use o formulário.'); window.location.href='web_sejuc.php';</script>";
+    echo "<script>alert('Acesso inválido.'); window.location.href='web_sejuc.php';</script>";
 }
 ?>
