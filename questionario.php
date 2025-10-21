@@ -52,7 +52,6 @@
       margin-top: 8px;
       margin-bottom: 8px;
     }
-
     .checks {
       margin-left: 30px;
     }
@@ -73,21 +72,21 @@
       </svg>&nbsp;&nbsp;<b>Questionário</b>
     </div>
 
-    <form id="formInteresses" onsubmit="enviarDados(event)">
+    <form action="salvar_quest.php" method="POST">
       <div class="checks">
         <h6 class="text-center mt-3">Quais áreas você quer mais cursos?</h6>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="informatica" id="informatica" value="Informática"> <label class="form-check-label">Informática</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="midia_multimeios" id="midia_multimeios" value="Mídia e Multimeios"> <label class="form-check-label">Mídia e Multimeios</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="marketing" id="marketing" value="Marketing"> <label class="form-check-label">Marketing</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="arte_cultura" id="arte_cultura" value="Arte e Cultura"> <label class="form-check-label">Arte e Cultura</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="empreendedorismos" id="empreendedorismos" value="Empreendedorismo"> <label class="form-check-label">Empreendedorismo</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="vendas"  value="Vendas"> <label class="form-check-label">Vendas</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="administracao" id="administracao" value="Administração"> <label class="form-check-label">Administração</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="agronomia" id="agronomia" value="Agronomia"> <label class="form-check-label">Agronomia</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="cursos[]" id="cursos" value="Informática"> <label class="form-check-label">Informática</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="cursos[]" id="cursos" value="Mídia e Multimeios"> <label class="form-check-label">Mídia e Multimeios</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="cursos[]" id="cursos" value="Marketing"> <label class="form-check-label">Marketing</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="cursos[]" id="cursos" value="Arte e Cultura"> <label class="form-check-label">Arte e Cultura</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="cursos[]" id="cursos" value="Empreendedorismo"> <label class="form-check-label">Empreendedorismo</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="cursos[]" id="cursos"  value="Vendas"> <label class="form-check-label">Vendas</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="cursos[]" id="cursos" value="Administração"> <label class="form-check-label">Administração</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="cursos[] id="cursos" value="Agronomia"> <label class="form-check-label">Agronomia</label></div>
       </div>
       <div class="mt-4 text-center">
         <label for="cursos" class="form-label">Você tem interesse em participar de cursos de capacitação profissional?</label>
-        <select name="cursos" id="cursos" class="form-select">
+        <select name="interesse" id="interesse" class="form-select">
           <option value="">Selecione</option>
           <option value="sim">Sim</option>
           <option value="nao">Não</option>
@@ -95,7 +94,7 @@
       </div>
       <div class="mt-4 text-center">
         <label for="cursos" class="form-label">Qual horário você prefere para cursos?</label>
-        <select name="cursos" id="cursos" class="form-select">
+        <select name="horarios" id="horarios" class="form-select">
           <option value="">Selecione</option>
           <option value="manha">Manhã</option>
           <option value="noite">Noite</option>
@@ -104,22 +103,22 @@
       </div>
       <div class="checks">
         <h6 class="text-center mt-3">Quais esportes você mais gosta de praticar?</h6>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="interesses[]" value="futebol"><label class="form-check-label">Futebol</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="interesses[]" value="volei"><label class="form-check-label">Vôlei</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="interesses[]" value="skate"><label class="form-check-label">Skate</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="interesses[]" value="dança"><label class="form-check-label">Dança</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="interesses[]" value="musculacao"><label class="form-check-label">Musculação</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="interesses[]" value="arte/cultura"><label class="form-check-label">Artes marciais</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="interesses[]" value="bmx"><label class="form-check-label">BMX</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="interesses[]" value="outro"><label class="form-check-label">Outro</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="esportes[]" id="esportes" value="futebol"><label class="form-check-label">Futebol</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="esportes[]" id="esportes" value="volei"><label class="form-check-label">Vôlei</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="esportes[]" id="esportes" value="skate"><label class="form-check-label">Skate</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="esportes[]" id="esportes" value="dança"><label class="form-check-label">Dança</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="esportes[]" id="esportes" value="musculacao"><label class="form-check-label">Musculação</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="esportes[]" id="esportes" value="arte/cultura"><label class="form-check-label">Artes marciais</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="esportes[]" id="esportes" value="bmx"><label class="form-check-label">BMX</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="esportes[]" id="esportes" value="outro"><label class="form-check-label">Outro</label></div>
       </div>
       <div class="mt-4 text-center">
         <label>Que tipo de espaço esportivo você sente falta na sua região?</label>
-        <input type="text" class="form-control" name="nome" required>
+        <input type="text" class="form-control" name="espaco_esportivo" id="espaco_esportivo" required>
       </div>
       <div class="mt-4 text-center">
         <label for="cursos" class="form-label">Que tipo de conteúdo você mais consome?</label>
-        <select name="cursos" id="cursos" class="form-select">
+        <select name="conteudo" id="conteudo" class="form-select">
           <option value="">Selecione</option>
           <option value="filmes">Filmes</option>
           <option value="series">Séries</option>
@@ -130,28 +129,28 @@
       </div>
       <div class="checks">
         <h6 class="text-center mt-3">Que estilos musicais você mais gosta de ouvir?</h6>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="interesses[]" value="pop"><label class="form-check-label">Pop</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="interesses[]" value="sertanejo"><label class="form-check-label">Sertanejo</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="interesses[]" value="funk"><label class="form-check-label">Funk</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="interesses[]" value="hiphop"><label class="form-check-label">Rap/Hip Hop</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="interesses[]" value="rock"><label class="form-check-label">Rock</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="interesses[]" value="eletromica"><label class="form-check-label">Eletrônica</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="interesses[]" value="gospel"><label class="form-check-label">Gospel</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="interesses[]" value="internacional"><label class="form-check-label">Internacional</label></div>
-        <div class="form-check"><input class="form-check-input" type="checkbox" name="interesses[]" value="outro"><label class="form-check-label">Outro</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="musica[]" id="musica" value="pop"><label class="form-check-label">Pop</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="musica[]" id="musica" value="sertanejo"><label class="form-check-label">Sertanejo</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="musica[]" id="musica" value="funk"><label class="form-check-label">Funk</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="musica[]" id="musica" value="hiphop"><label class="form-check-label">Rap/Hip Hop</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="musica[]" id="musica" value="rock"><label class="form-check-label">Rock</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="musica[]" id="musica" value="eletromica"><label class="form-check-label">Eletrônica</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="musica[]" id="musica" value="gospel"><label class="form-check-label">Gospel</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="musica[]" id="musica" value="internacional"><label class="form-check-label">Internacional</label></div>
+        <div class="form-check"><input class="form-check-input" type="checkbox" name="musica[]" id="musica" value="outro"><label class="form-check-label">Outro</label></div>
       </div>
       <div class="text-center mt-4 mb-3">
       <div class="mt-4 text-center">
-       <label for="conheceProjeto" class="form-label">Você conhece algum projeto ou programa para jovens oferecido na cidade?</label>
-        <select name="conheceProjeto" id="conheceProjeto" class="form-select" required>
+       <label for="conhece" class="form-label">Você conhece algum projeto ou programa para jovens oferecido na cidade?</label>
+        <select name="conhece" id="conhece" class="form-select" required>
         <option value="">Selecione</option>
         <option value="sim">Sim</option>
         <option value="nao">Não</option>
       </select>
       </div>
       <div class="mt-4 text-center">
-        <label for="meioInformacao" class="form-label">Como você gostaria de ser informado(a) sobre projetos e oportunidades para jovens?</label>
-        <select name="meioInformacao" id="meioInformacao" class="form-select" required>
+        <label for="informar" class="form-label">Como você gostaria de ser informado(a) sobre projetos e oportunidades para jovens?</label>
+        <select name="informar" id="informar" class="form-select" required>
           <option value="">Selecione</option>
           <option value="redes sociais">Redes sociais</option>
           <option value="escola">Escola</option>
@@ -167,38 +166,3 @@
       <p id="mensagem" class="text-center"></p>
     </form>
   </div>
-
-  <script>
-    function enviarDados(e) {
-      e.preventDefault(); // impede o formulário de recarregar a página
-
-      const checkboxes = document.querySelectorAll('input[name="interesses[]"]:checked');
-      const interessesSelecionados = Array.from(checkboxes).map(cb => cb.value);
-      const cursoSelecionado = document.getElementById('cursos').value;
-
-      if (interessesSelecionados.length === 0) {
-        document.getElementById('mensagem').textContent = "⚠️ Selecione pelo menos uma área!";
-        return;
-      }
-
-      const dados = new FormData();
-      dados.append('interesses', JSON.stringify(interessesSelecionados));
-      dados.append('curso', cursoSelecionado);
-
-      fetch('salvar.php', {
-        method: 'POST',
-        body: dados
-      })
-      .then(response => response.text())
-      .then(retorno => {
-        document.getElementById('mensagem').textContent = retorno;
-        document.getElementById('formInteresses').reset(); // limpa o formulário
-      })
-      .catch(error => {
-        document.getElementById('mensagem').textContent = "❌ Erro ao enviar dados.";
-        console.error(error);
-      });
-    }
-  </script>
-</body>
-</html>

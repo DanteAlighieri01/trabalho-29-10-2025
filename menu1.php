@@ -54,12 +54,11 @@ p{
 <body>
 
 <ul>
-  <li><a class="active" href="#home">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
+  <li><a class="active" href="web_sejuc.php">Home</a></li>
+  <li><a href="noticias.php">Noticias</a></li>
+  <li><a href="contato.php">Contato</a></li>
+  <li><a href="sobre.php">Sobre</a></li>
 </ul>
-
 <div style="margin-left:130px;padding:1px 16px;height:1000px;">
   <h2>Secretaria da juventude e cidadania</h2>
   <h3>O que nós somos e nossos valores?</h3>
@@ -68,8 +67,6 @@ p{
    <p> Nesse processo, destaca-se o papel estratégico do Conselho Municipal de Juventude e dos demais Conselhos de Direitos vinculados, que contribuem para a formulação, monitoramento e avaliação das políticas públicas setoriais.</P>
 <p>Entre suas principais atribuições, está o planejamento, a formulação, a orientação e a execução de políticas públicas voltadas à promoção do desenvolvimento humano, à proteção integral, à inclusão social e à integração plena de diversos segmentos historicamente vulnerabilizados. Isso inclui, de forma prioritária, a juventude, os migrantes nacionais e internacionais, as comunidades indígenas, bem como a população negra e outros grupos étnico-raciais.</P>
 <p>Além disso, a Secretaria atua de forma transversal na promoção da igualdade racial, na valorização da diversidade cultural e na prevenção e combate a todas as formas de discriminação, preconceito e violências, reafirmando o compromisso com os direitos humanos, a justiça social e a construção de uma sociedade mais equitativa, plural e inclusiva.</p>
-  
 </div>
-
 </body>
 </html>

@@ -1,92 +1,126 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="utf-8">
-        <title>SEJUC/CONECTA JOVEM</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <title>SEJUC/CONECTA JOVEM</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
     <style>
-    .verde {
-      background-color: #4682B4;
-      color: white;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        h2 { 
+            font-family: Arial Black, sans-serif; 
+            margin-left: 20px;
+        }   
 
-    .verde img {
-      height: 60px;
-      object-fit: contain;
-    }
+        .two {
+            background-color: #4682B4; /* azul escuro */
+            color: white;
+        }
 
-    .card {
-      max-width: 600px;
-      margin: 30px auto;
-      border-radius: 12px;
-    }
+        .bandeira {
+            text-align: center;
+            background-color: #4682B4;
+        }
 
-    form {
-      padding: 20px 30px;
-    }
+        .menu {
+            background-color: #f1f1f1;
+            color: white;
+            justify-content: flex start;
+        }
 
-    .form-label {
-      font-weight: 600;
-    }
+        .menu2 {
+            /* vazio */
+        }
 
-    button {
-      background-color: #4CAF50;
-      color: white;
-      padding: 8px 20px;
-      border: none;
-      border-radius: 25px;
-      font-size: 16px;
-      cursor: pointer;
-    }
+        /* 🔹 Faixa azul-claro aumentada */
+        .baixo {
+            background-color: #00BFFF; /* azul-claro */
+            height: 25px; /* aumentei de 50px para 100px */
+            width: 100%;
+        }
+        body {
+        background-color: #ffffff; /* fundo branco */
+        }
+        ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 130px;
+        background-color: #f1f1f1;
+        position: fixed;
+        height: 100%;
+        overflow: auto;
+        }
 
-    button:hover {
-      background-color: #45a049;
-    }
-    h2 { font-family: Arial Black, sans-serif; text-align: center;}    
-    </style>
-    <body>
-    <div class="verde row justify-content row-cols-1 row-cols-md-3 mb-3 text">
-        <img src="imagens\link_gov.png" style = "margin: 20px;width: 190px; height: 50px"/>
-        <img src="imagens\brasao_mga.png" style = "margin-right: 20px;margin-bottom: 10px;margin-left: 1560px;margin-top: 10px;width: 100px; height: 80px"/>   
-    </div>   
-    <div class="bandeira style=text-align: center;">
-    <h2>
-        CONECTA JOVEM
-    </h2>
-    </div>
-        <br>
-        <br>
-        <div class=" row justify-content-center row-cols-1 row-cols-md-3 mb-3 text-center">
-            <div class="col">
-                <div class="cinza card mb-4 rounded-3 shadow-sw">
-                    <div class="card-header py-3">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#00008B" class="bi bi-person-circle" viewBox="0 0 16 16">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-                        </svg>&nbsp;&nbsp;<b>LOGIN</b></svg>
-                    </div>
-                    <div class="card-body text-start">
-                        <form action="login.php" method="POST">
-                            <label class="form-label"><b>LOGIN</b></label>
-                            <input class="form-control" type="text" name="login" required/>
-                            <br>
-                            <label class="form-label"><b>SENHA</b></label>
-                            <input class="form-control" type="password" name="senha" required/>
-                            <br>
-                            <br>
-                            <div>
-                            <button type="submit">ENVIAR</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>       
-            </div>
+
+        li a {
+        display: block;
+        color: black;
+        padding: 8px 16px;
+        text-decoration: none;
+        }
+
+        li a.active {
+        background-color: #00BFFF;
+        color: white;
+        }
+
+        li a:hover:not(.active) {
+        background-color: #00BFFF;
+        color: black;
+        }
+        h2 {
+        color: black
+        }
+        h3{
+        color: black
+        }
+        p{
+        color:black
+        }
+    </style> 
+</head>
+
+<body>
+    <div class="one row justify-content row-cols-1 row-cols-md-1 mb-1">
+        <div class="two row justify-content">
+            <img src="imagens\link_gov.png" style="margin: 20px; width: 190px; height: 50px"/>
+            <img src="imagens\secretaria_juventude.jpg" style="margin-right: 20px; margin-bottom: 0px; margin-left: 300px; margin-top: 0px; width: 880px; height: 200px"/>   
+            
+            <div class="menu2 row justify-content row-cols-1 row-cols-md-6 mb-2">
+                <?php include 'menu2.php'; ?>
+            </div>  
         </div>
-    <body>
+
+        <!-- 🔹 Faixa azul-claro -->
+        <div class="baixo"></div>
+
+        <div class="menu d-flex justify-content-start align-items-center p-2">
+        <body>
+
+<ul>
+  <li><a class="active" href="web_sejuc.php">Home</a></li>
+  <li><a href="noticias.php">Notícias</a></li>
+  <li><a href="eventos.php">Eventos</a></li>
+  <li><a href="esportes.php">Esportes</a></li>
+  <li><a href="cursos.php">Cursos</a></li>
+  <li><a href="sujestoes.php">Sujestões</a></li>
+</ul>
+
+<div style="margin-left:130px;padding:1px 16px;height:1000px;">
+  <h2>Secretaria da juventude e cidadania</h2>
+  <h3>O que nós somos e nossos valores?</h3>
+<p>A Secretaria de Juventude, Cidadania e Migrantes tem como missão coordenar, executar e aprimorar o sistema de gestão das políticas públicas e dos serviços destinados à Juventude, à Cidadania e à População Migrante.</p>
+  <p> Suas ações são fundamentadas nos princípios da participação popular, da descentralização administrativa e do controle social, promovendo uma atuação articulada e democrática.</p>
+   <p> Nesse processo, destaca-se o papel estratégico do Conselho Municipal de Juventude e dos demais Conselhos de Direitos vinculados, que contribuem para a formulação, monitoramento e avaliação das políticas públicas setoriais.</P>
+<p>Entre suas principais atribuições, está o planejamento, a formulação, a orientação e a execução de políticas públicas voltadas à promoção do desenvolvimento humano, à proteção integral, à inclusão social e à integração plena de diversos segmentos historicamente vulnerabilizados. Isso inclui, de forma prioritária, a juventude, os migrantes nacionais e internacionais, as comunidades indígenas, bem como a população negra e outros grupos étnico-raciais.</P>
+<p>Além disso, a Secretaria atua de forma transversal na promoção da igualdade racial, na valorização da diversidade cultural e na prevenção e combate a todas as formas de discriminação, preconceito e violências, reafirmando o compromisso com os direitos humanos, a justiça social e a construção de uma sociedade mais equitativa, plural e inclusiva.</p>
+  
+</div>
+
+</body>
+        </div>    
+    </div>
+    <br>
+</body>
 </html>
