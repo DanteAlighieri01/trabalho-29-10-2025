@@ -7,7 +7,7 @@
     if (mysqli_num_rows($logar) > 0) {
         $dados = mysqli_fetch_assoc($logar);
         $_SESSION["user"] = $dados['login'];
-        echo ("<script>window.location.replace('dashbord.php');</script>");
+        echo ("<script>window.location.replace('dashboard.php');</script>");
     }
     else {
         echo ("<script>alert('Login ou senha inválido! Tente novamente!');</script>");

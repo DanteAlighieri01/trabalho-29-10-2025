@@ -72,7 +72,7 @@
                         </svg>&nbsp;&nbsp;<b>LOGIN</b></svg>
                     </div>
                     <div class="card-body text-start">
-                        <form action="login.php" method="POST">
+                        <form action="dashboard.php" method="POST">
                             <label class="form-label"><b>LOGIN</b></label>
                             <input class="form-control" type="text" name="login" required/>
                             <br>
