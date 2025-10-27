@@ -1,8 +1,9 @@
 <?php
-include 'conecta.php'; // Certifique-se que conecta.php cria $conn corretamente
+include 'conecta.php'; // Conexão com o banco. $conn deve ser o mysqli
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Captura os campos
+
+    // Captura os campos do formulário
     $cursos = isset($_POST['cursos']) ? implode(',', $_POST['cursos']) : '';
     $interesse = $_POST['interesse'] ?? '';
     $horarios = $_POST['horarios'] ?? '';
@@ -13,13 +14,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $esportes = isset($_POST['esportes']) ? implode(',', $_POST['esportes']) : '';
     $musica = isset($_POST['musica']) ? implode(',', $_POST['musica']) : '';
 
-    // Validação mínima
-    if (empty($espaco_esportivo) || empty($informar)) {
+    // Validação mínima: campos obrigatórios
+    if (empty($espaco_esportivo) || empty($conhece) || empty($informar)) {
         echo "<p style='color:red;text-align:center;'>Por favor, preencha todos os campos obrigatórios.</p>";
         exit;
     }
 
-    // Prepared statement (seguro contra SQL Injection)
+    // Prepared statement: seguro contra SQL Injection
     $stmt = $conn->prepare("
         INSERT INTO questionario 
         (cursos, interesse, horarios, espaco_esportivo, conteudo, conhece, informar, esportes, musica)
@@ -30,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         die("Erro ao preparar SQL: " . $conn->error);
     }
 
+    // Vincula os parâmetros ao statement
     $stmt->bind_param(
         "sssssssss",
         $cursos,
@@ -43,15 +45,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $musica
     );
 
+    // Executa o statement
     if ($stmt->execute()) {
+        // Sucesso: redireciona com alerta
         echo "<script>
-        alert('Questionario realizado com sucesso!');
+        alert('Questionário realizado com sucesso!');
         window.location.href='index.php';
-    </script>";
+        </script>";
     } else {
         echo "<p style='color:red;text-align:center;'>Erro ao salvar: " . $stmt->error . "</p>";
     }
 
+    // Fecha statement e conexão
     $stmt->close();
     $conn->close();
 }
