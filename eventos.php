@@ -75,6 +75,9 @@
     <!-- Imagem centralizada -->
     <img src="imagens/secretaria_juventude.jpg" alt="Secretaria Juventude" 
          style="width:880px; height:200px;">
+    <?php
+    include 'menu2.php';
+    ?>
 </div>
 
     <div class="baixo"></div>

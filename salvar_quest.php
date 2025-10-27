@@ -12,11 +12,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $musica = $_POST['musica'] ?? '';
     $conhece = $_POST['conhece'] ?? '';
     $informar = $_POST['informar'] ?? '';
-    // Campos obrigatorios
+    if (is_array($esportes)) {
+        $esportes = implode(', ', $esportes); // transforma array em string
+    }
+        if (is_array($musica)) {
+            $musica = implode(', ', $musica); // transforma array em string
+        }
     if (is_array($cursos)) {
         $cursos = implode(', ', $cursos); // transforma array em string
     }
-    if (empty($cursos) || empty($interesse)) {
+    // Campos obrigatorios
+    if (empty($informar) || empty($interesse)) {
         echo "<script>alert('Preencha todos os campos obrigatórios.'); window.location.href='index.php';</script>";
         exit;
     }
