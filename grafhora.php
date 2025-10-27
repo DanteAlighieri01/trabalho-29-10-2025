@@ -1,26 +1,29 @@
 <?php
 include 'conecta.php';
 
-$sim = 0;
-$nao = 0;
+$manha = 0;
+$tarde = 0;
+$noite = 0;
 
 // Corrige execução da query
 $sql = "SELECT horarios FROM questionario";
 $resultado = mysqli_query($conn, $sql);
 
 // Corrige loop e nomes de variáveis
-while ($row_interesse = mysqli_fetch_assoc($resultado)) {
-    if (strtolower($row_interesse['horarios']) == "sim") {
-        $sim++;
-    } elseif (strtolower($row_interesse['horarios']) == "nao") {
-        $nao++;
+while ($row_horario = mysqli_fetch_assoc($resultado)) {
+    if (strtolower($row_horario['horarios']) == "manha") {
+        $manha++;
+    } else if(strtolower($row_horario['horarios']) == "tarde") {
+        $tarde++;
+    } if ($row_horario['horarios'] == "noite"){
+      $noite++;
     }
 }
 ?>
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
-    <title>Gráfico de Interesse</title>
+    <title>Gráfico de Horarios</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
@@ -29,8 +32,9 @@ while ($row_interesse = mysqli_fetch_assoc($resultado)) {
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Resposta', 'Quantidade'],
-          ['Sim', <?= $sim ?>],
-          ['Não', <?= $nao ?>]
+          ['Manhã', <?= $manha ?>],
+          ['Tarde', <?= $tarde ?>],
+          ['Noite', <?= $noite ?>]
         ]);
 
         var options = {

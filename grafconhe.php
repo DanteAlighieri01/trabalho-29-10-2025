@@ -20,7 +20,7 @@ while ($row_interesse = mysqli_fetch_assoc($resultado)) {
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
-    <title>Gráfico de Interesse</title>
+    <title>Gráfico Para Saber se Conhecem a Sejuc</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
       google.charts.load('current', {'packages':['corechart']});
@@ -34,7 +34,7 @@ while ($row_interesse = mysqli_fetch_assoc($resultado)) {
         ]);
 
         var options = {
-          title: 'Interesse',
+          title: 'Conhece',
           colors: ['#4CAF50', '#F44336'], // verde e vermelho
           pieHole: 0.4, // deixa em formato de rosca
           backgroundColor: 'transparent'

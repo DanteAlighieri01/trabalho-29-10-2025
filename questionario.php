@@ -56,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </div>
 
 <div class="card shadow">
-  <form method="POST" action="">
+  <form method="POST" action="salvar_quest.php">
     <h6 class="text-center mt-3">Quais áreas você quer mais cursos?</h6>
     <?php
     $todos_cursos = ['Informática','Mídia e Multimeios','Marketing','Arte e Cultura','Empreendedorismo','Vendas','Administração','Agronomia'];

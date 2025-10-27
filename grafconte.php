@@ -1,16 +1,16 @@
 <?php
 include 'conecta.php';
 
-// Buscar todos os cursos do banco
-$sql = "SELECT cursos FROM questionario";
+// Buscar todos os conteudos do banco
+$sql = "SELECT conteudo FROM questionario";
 $resultado = mysqli_query($conn, $sql);
 
-// Todas as opções de cursos
-$opcoes = ['Informática'=>0,'Mídia e Multimeios'=>0,'Marketing'=>0,'Arte e Cultura'=>0,'Empreendedorismo'=>0,'Vendas'=>0,'Administração'=>0,'Agronomia'=>0];
+// Todas as opções de conteudos
+$opcoes = ['filmes'=>0,'series'=>0,'jogos'=>0,'redes_sociais'=>0,'outros'=>0];
 
 // Contar cada curso
 while($row = mysqli_fetch_assoc($resultado)){
-    $respostas = explode(',', $row['cursos']); // separar por vírgula
+    $respostas = explode(',', $row['conteudo']); // separar por vírgula
     foreach($respostas as $resposta){
         $resposta = trim($resposta);
         if(isset($opcoes[$resposta])){
@@ -19,10 +19,11 @@ while($row = mysqli_fetch_assoc($resultado)){
     }
 }
 ?>
+
 <html lang="pt-br">
 <head>
 <meta charset="utf-8">
-<title>Gráfico de Cursos</title>
+<title>Gráfico de Conteudos</title>
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
 google.charts.load('current', {'packages':['corechart']});
@@ -34,8 +35,8 @@ function drawChart() {
         <?php
         $cores = ['#4CAF50','#2196F3','#FFC107','#FF5722','#9C27B0','#009688','#E91E63','#795548'];
         $i=0;
-        foreach($opcoes as $curso=>$qtd){
-            echo "['$curso', $qtd, '".$cores[$i]."'],";
+        foreach($opcoes as $conteudo=>$qtd){
+            echo "['$conteudo', $qtd, '".$cores[$i]."'],";
             $i++;
         }
         ?>
