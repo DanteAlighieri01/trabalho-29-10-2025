@@ -68,7 +68,7 @@ function drawChart() {
 </script>
 </head>
 
-<body style="display:flex;justify-content:center;align-items:center;height:100vh;">
-  <div id="barchart_material" style="width:900px; height:500px;"></div>
+<body style="">
+  <div id="barchart_material" style="width:300px; height:250px;"></div>
 </body>
 </html>

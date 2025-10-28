@@ -1,5 +1,7 @@
 <?php
-// Simulação de dados (não usados no JS, só pra exibir respostas)
+// ----------------------------------------------------------------------
+// Simulação de dados (aqui não é usada no JS — apenas exemplo de variável)
+// ----------------------------------------------------------------------
 $dados = [
     "respostas" => [
         "Achei o conteúdo interessante e fácil de entender.",
@@ -9,105 +11,122 @@ $dados = [
     ]
 ];
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <title>Dashboard - Pesquisa</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <meta charset="utf-8">
+    <title>SEJUC / CONECTA JOVEM</title>
+
+    <!-- Bootstrap CSS e JS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
     <style>
-        .chart-container {
-            width: 100%;
-            height: 400px;
+        /* ----------------------------------------
+           Estilo geral do corpo e do cabeçalho
+           ---------------------------------------- */
+        body {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        .contanier-head {
+            background-color: #4682B4;  /* azul institucional */
+            color: white;
+        }
+
+        /* ----------------------------------------
+           Área dos gráficos (centralização e estilo)
+           ---------------------------------------- */
+        .grafs {
+            max-width: 600px;        /* limita a largura máxima */
+            margin: 30px auto;       /* centraliza o gráfico */
+            border-radius: 12px;     /* deixa os cantos arredondados */
+            background: #f8f9fa;     /* fundo leve */
+            padding: 15px;
+        }
+
+        /* Melhor espaçamento entre os cards */
+        .card {
+            margin: 30px auto;
+            width: 90%;
+            border: none;
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        /* Cabeçalho do card com ícone */
+        .card svg {
+            vertical-align: middle;
+            margin-right: 5px;
+        }
+
+        .card b {
+            color: #00008B;
         }
     </style>
 </head>
-<body class="bg-light">
-<div class="container-fluid p-4">
-    <h2 class="text-center mb-4">📊 Dashboard de Resultados</h2>
-    
-    <div class="row g-4">
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-header bg-primary text-white">Gráfico 1</div>
-                <div class="card-body">
-                    <?php
-                    include 'graf1.php';
-                    ?>
-                    <div id="chart_div_1" class="chart-container"></div>
-                </div>
-            </div>
+
+<body>
+    <!-- ----------------------------------------------------------------
+         CABEÇALHO COM LOGOTIPOS
+         ---------------------------------------------------------------- -->
+    <div class="contanier-head d-flex align-items-center justify-content-center position-relative py-3">
+        <!-- Logo Governo (à esquerda) -->
+        <img src="imagens/link_gov.png" alt="Logo Governo"
+             style="position: absolute; left: 30px; top: 30px; width:190px; height:50px;">
+
+        <!-- Imagem centralizada (Secretaria Juventude) -->
+        <img src="imagens/secretaria_juventude.jpg" alt="Secretaria Juventude"
+             style="width:880px; height:200px;">
+    </div>
+
+    <!-- ----------------------------------------------------------------
+         TÍTULO DO DASHBOARD
+         ---------------------------------------------------------------- -->
+    <div class="container-fluid p-4">
+        <h2 class="text-center mb-4">📊 Dashboard de Resultados</h2>
+    </div>
+
+    <!-- ----------------------------------------------------------------
+         CARD 1 – GRÁFICO 1
+         ---------------------------------------------------------------- -->
+    <div class="card shadow">
+        <div class="card-header bg-white border-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#00008B" class="bi bi-bar-chart-line" viewBox="0 0 16 16">
+                <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1zm1 12h2V2h-2zm-3 0V7H7v7zm-5 0v-3H2v3z"/>
+            </svg>
+            <b> Gráfico 1 </b>
         </div>
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-header bg-success text-white">Gráfico 2</div>
-                <div class="card-body">
-                    <?php
-                    include 'graf2.php';
-                    ?>
-                    <div id="piechart_2" class="chart-container"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-header bg-warning text-dark">Gráfico 3</div>
-                <div class="card-body">
-                    <?php
-                    include 'graf3.php';
-                    ?>
-                    <div id="piechart_3" class="chart-container"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-header bg-danger text-white">Gráfico 4</div>
-                <div class="card-body">
-                    <?php
-                    include 'graf4.php';
-                    ?>
-                    <div id="barchart_material_4" class="chart-container"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-header bg-info text-white">Gráfico 5</div>
-                <div class="card-body">
-                    <?php
-                    include 'graf5.php';
-                    ?>
-                    <div id="columnchart_values_5" class="chart-container"></div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-header bg-secondary text-white">Gráfico 6</div>
-                <div class="card-body">
-                    <?php
-                    include 'graf6.php';
-                    ?>
-                    <div id="linechart_material_6" class="chart-container"></div>
-                </div>
+
+        <div class="container">
+            <div class="grafs">
+                <?php
+                // Inclui o primeiro gráfico (pode ser qualquer gráfico Google Charts, Chart.js etc.)
+                include 'graf1.php';
+                ?>
             </div>
         </div>
     </div>
-    <div class="mt-5">
-        <div class="card shadow-sm">
-            <div class="card-header bg-dark text-white">🗒 Respostas Abertas</div>
-            <div class="card-body" style="max-height: 300px; overflow-y: auto;">
-                <?php foreach ($dados["respostas"] as $resposta): ?>
-                    <div class="border-bottom py-2">
-                        <?= htmlspecialchars($resposta) ?>
-                    </div>
-                <?php endforeach; ?>
+    <!-- ----------------------------------------------------------------
+         CARD 2 – GRÁFICO 2
+         ---------------------------------------------------------------- -->
+    <div class="card shadow">
+        <div class="card-header bg-white border-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#00008B" class="bi bi-bar-chart-line" viewBox="0 0 16 16">
+                <path d="M11 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v12h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h1V7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v7h1zm1 12h2V2h-2zm-3 0V7H7v7zm-5 0v-3H2v3z"/>
+            </svg>
+            <b> Gráfico 2 </b>
+        </div>
+
+        <div class="container">
+            <div class="grafs">
+                <?php
+                // Inclui o segundo gráfico
+                include 'graf2.php';
+                ?>
             </div>
         </div>
     </div>
-</div>
 </body>
 </html>

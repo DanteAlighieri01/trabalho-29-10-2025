@@ -87,9 +87,9 @@
         <label for="situacao" class="form-label">Gênero</label>
         <select name="genero" id="genero" class="form-select" required>
           <option value="">Selecione</option>
-          <option value="estudando">Masculino</option>
-          <option value="trabalhando">Feminino</option>
-          <option value="ambos">Outro</option>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+          <option value="outro">Outro</option>
         </select>
       </div>
 
